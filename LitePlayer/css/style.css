@@ -164,54 +164,61 @@ body {
   text-decoration: underline;
 }
 
-/* ========================= */
-/*  MODO CELULAR */
-/* ========================= */
+/* ===== MODO CELULAR TIPO APP ===== */
 @media (max-width: 768px) {
 
-    /* Barra superior */
-    .topbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-        gap: 10px;
+    /* Ocultar cosas innecesarias */
+    .tiktok-logo,
+    .recommendation,
+    .footer {
+        display: none !important;
     }
 
-    .topbar .menu {
-        flex-wrap: wrap;
+    /* Centrar logo */
+    .topbar-left {
         justify-content: center;
-        gap: 10px;
+        width: 100%;
     }
 
-    /* Logo */
-    .logo {
-        width: 180px;
+    .logo-grande {
+        max-width: 180px;
     }
 
-    /* Panel central */
+    /* Contenido en columna */
+    .content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    /* Panel principal */
     .game-panel {
-        width: 95%;
-        max-height: 60vh;
+        width: 92%;
+        height: 65vh;
+        margin-bottom: 80px;
     }
 
-    .game-slot {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Sobre mí */
-    .about {
-        width: 95%;
-        font-size: 14px;
-    }
-
-    /* TikTok esquina */
-    .tiktok-icon {
-        width: 32px;
+    /* Barra inferior tipo app */
+    .topbar-right {
+        position: fixed;
         bottom: 10px;
-        left: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+        padding: 10px 15px;
+        border-radius: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 999;
+    }
+
+    .topbar-right button {
+        font-size: 14px;
+        padding: 6px 10px;
     }
 }
+
 
 .recommendation {
     position: fixed;
