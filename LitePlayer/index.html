@@ -2,88 +2,70 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>LitePlayer</title>
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title>LiteProjects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="assets/icons/Logo mini.png">
 
-
+    <link rel="icon" type="image/png" href="assets/icons/Logo mini.png"/>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
-<meta name="referrer" content="no-referrer-when-downgrade" />
-    <div class="background"></div>
 
-    <!-- Barra superior -->
-    <header class="topbar">
-        <div class="topbar-left">
-            <img src="assets/icons/Logo grande.png" alt="Logo" class="logo-grande">
+<div class="background"></div>
 
-
-        </div>
-
-       <nav class="topbar-right">
-    <button id="btnInicio">Inicio</button>
-
-    <div class="dropdown" id="categoriasDropdown">
-    <button id="btnCategorias">Categorias</button>
-
-    <div class="dropdown-menu" id="menuCategorias">
-
-        <div class="dropdown-section">
-            <div class="dropdown-item" data-target="pc">PC ▾</div>
-            <div class="submenu">
-                <div class="submenu-item">Terror</div>
-                <div class="submenu-item">Carreras</div>
-                <div class="submenu-item">Puzzles</div>
-                <div class="submenu-item">Acción</div>
-            </div>
-        </div>
-
-        <div class="dropdown-section">
-            <div class="dropdown-item" data-target="celular">Celular ▾</div>
-            <div class="submenu">
-                <div class="submenu-item">Terror</div>
-                <div class="submenu-item">Arcade</div>
-                <div class="submenu-item">Casual</div>
-                <div class="submenu-item">Puzzles</div>
-            </div>
-        </div>
-
+<!-- BARRA SUPERIOR -->
+<header class="topbar">
+    <div class="topbar-left">
+        <img src="assets/icons/Logo grande.png" class="logo-grande">
     </div>
+    
+    <nav class="topbar-right">
+        <button id="btnInicio">Inicio</button>
+        <button id="btnCelulares">Celulares</button>
+        <button id="btnProgramas">Programas</button>
+        <button id="btnSobreMi">Sobre mí</button>
+    </nav>
+</header>
+
+<!-- BUSCADOR -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar juego...">
 </div>
 
-
-</div>
-
-</div>
-
-
-</div>
-
+<!-- CONTENIDO CENTRAL -->
+<main class="content">
+    <!-- PANEL CENTRAL (UNO SOLO) -->
+    <div class="game-panel" id="gamePanel">
+        <div class="game-slot">Portal</div>
+        <div class="game-slot">Portal 2</div>
+        <div class="game-slot">Minecraft</div>
+        <div class="game-slot">GTA San Andreas</div>
+        <div class="game-slot">Undertale</div>
     </div>
+</main>
 
-    <button id="btnSobreMi">Sobre mí</button>
-</nav>
+<script src="js/script.js"></script>
 
+<!-- Mini logo TikTok -->
+<a href="https://www.tiktok.com/@joazzu" target="_blank" class="tiktok-logo">
+    <img src="assets/icons/tiktok.png" alt="TikTok">
+</a>
 
-    </header>
+<!-- Footer -->
+<footer class="footer">
+  <p>¿Sugerencias o errores? Escríbeme a: 
+    <a href="mailto:correodesugerenciaslite@gmail.com">
+        correodesugerenciaslite@gmail.com
+    </a>
+  </p>
+</footer>
 
-    <main class="content">
+<!-- Recomendación -->
+<div class="recommendation">
+    <img src="assets/icons/portal.jpeg" alt="Juego recomendado">
+    <span>Recomendación</span>
+</div>
 
-<!-- Panel de juegos que se transforma -->
-<div class="game-panel" id="gamePanel">
-    <div class="game-slot"><a href="https://www.mediafire.com/file/plqw9g0u2837pxj/Doom_Original.zip/file" target="_blank">Doom</a></div>
-    <div class="game-slot"><a href="https://www.mediafire.com/file/7jbmmawqa65r46i/Grand_Theft_Auto_Vice_City.7z/file" target="_blank">Grand Theft Auto Vice City</a></div>
-    <div class="game-slot"><a href="https://www.mediafire.com/file/75466vg1ia1adtv/Papers_Please.7z/file" target="_blank">Papers Please</a></div>
-    <div class="game-slot"><a href="https://www.mediafire.com/file/o1bmam6snaxt8tc/Plantas_VS_Zombies.7z/file" target="_blank">Plants vs Zombies 1</a></div>
-    <div class="game-slot"><a href="https://www.mediafire.com/file/sa5sqkeuqmfr3m8/Undertale_Spanish.7z/file" target="_blank">Undertale</a></div>
-
-    </main>
-
-    <script src="js/script.js"></script>
 </body>
 </html>

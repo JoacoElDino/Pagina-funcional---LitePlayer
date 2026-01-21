@@ -1,52 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const gamePanel = document.getElementById('gamePanel');
+    const searchInput = document.getElementById("searchInput");
+    const searchContainer = document.querySelector(".search-container");
+
     const btnInicio = document.getElementById('btnInicio');
+    const btnCelulares = document.getElementById('btnCelulares');
+    const btnProgramas = document.getElementById('btnProgramas');
     const btnSobreMi = document.getElementById('btnSobreMi');
 
-// Botón Categorías (abre / cierra menú principal)
-const btnCategorias = document.getElementById("btnCategorias");
-const menuCategorias = document.getElementById("menuCategorias");
+    // CONTENIDOS
+    const juegosInicio = `
+        <div class="game-slot">Portal</div>
+        <div class="game-slot">Portal 2</div>
+        <div class="game-slot">Minecraft</div>
+        <div class="game-slot">GTA San Andreas</div>
+        <div class="game-slot">Undertale</div>
+    `;
 
-btnCategorias.addEventListener("click", () => {
-    menuCategorias.classList.toggle("active");
-});
+    const juegosCelulares = `
+        <div class="game-slot">Subway Surfers</div>
+        <div class="game-slot">Clash Royale</div>
+        <div class="game-slot">Stumble Guys</div>
+    `;
 
-// PC / Celular (abre su submenú hacia abajo)
-document.querySelectorAll(".dropdown-section .dropdown-item").forEach(item => {
-    item.addEventListener("click", (e) => {
-        e.stopPropagation(); // evita cierres raros
-        const section = item.parentElement;
-        section.classList.toggle("active");
-    });
-});
+    const juegosProgramas = `
+        <div class="game-slot">Photoshop</div>
+        <div class="game-slot">Premiere Pro</div>
+        <div class="game-slot">VS Code</div>
+    `;
 
+    // Función buscador (se reaplica siempre)
+    function activarBuscador() {
+        const texto = searchInput.value.toLowerCase();
+        const gameSlots = gamePanel.querySelectorAll(".game-slot");
 
+        gameSlots.forEach(game => {
+            const nombre = game.textContent.toLowerCase();
+            game.style.display = nombre.includes(texto) ? "flex" : "none";
+        });
+    }
 
+    searchInput.addEventListener("input", activarBuscador);
 
-    // Guardar el contenido original de los juegos para volver a Inicio
-    const juegosOriginal = gamePanel.innerHTML;
-
-    
-    // --- INICIO ---
+    // INICIO
     btnInicio.addEventListener('click', () => {
-        gamePanel.innerHTML = juegosOriginal;
+        gamePanel.innerHTML = juegosInicio;
+        searchContainer.style.display = "block";
+        searchInput.value = "";
     });
 
-    
-    // --- SOBRE MI (solo lectura) ---
+    // CELULARES
+    btnCelulares.addEventListener('click', () => {
+        gamePanel.innerHTML = juegosCelulares;
+        searchContainer.style.display = "block";
+        searchInput.value = "";
+    });
+
+    // PROGRAMAS
+    btnProgramas.addEventListener('click', () => {
+        gamePanel.innerHTML = juegosProgramas;
+        searchContainer.style.display = "block";
+        searchInput.value = "";
+    });
+
+    // SOBRE MI
     btnSobreMi.addEventListener('click', () => {
         gamePanel.innerHTML = `
             <div class="sobre-mi">
-                <h2>Sobre mi</h2>
-              <div class="sobre-mi">
-    <p>Bienvenido a LitePlayer, un espacio creado para explorar y disfrutar de los mejores juegos. Aquí encontrarás títulos cuidadosamente seleccionados para todo tipo de jugadores, desde clásicos inolvidables hasta experiencias modernas e inmersivas.</p>
 
-    <p>Por el momento, el sitio aún está en desarrollo, pero sigue creciendo con nuevas funciones, juegos y mejoras. Pronto podrás disfrutar de más contenido, enviar tus sugerencias y vivir una experiencia de juego más completa y personalizada.</p>
-</div>
+                <p>SOBRE MI<p>
 
+                <p>Bienvenido a LiteProjects, un espacio creado para explorar y disfrutar de los mejores juegos y programas de forma sencilla y directa.</p>
+
+                <p>El sitio aún se encuentra en desarrollo, pero poco a poco se irán añadiendo nuevas funciones, más contenido y mejoras visuales para ofrecer una experiencia cada vez más completa.</p>
             </div>
         `;
+        searchContainer.style.display = "none";
     });
 
+    // Cargar inicio por defecto
+    gamePanel.innerHTML = juegosInicio;
 });
