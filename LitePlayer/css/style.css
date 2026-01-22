@@ -293,3 +293,18 @@ body {
 .sobre-mi p {
     margin-bottom: 16px;   /* 👈 separación real entre párrafos */
 }
+
+.game-slot {
+    height: 48px;
+    background: rgba(0, 0, 0, 0.098);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    color: #ffffffd5;
+    text-decoration: none;   /* 👈 esto quita el subrayado */
+}
